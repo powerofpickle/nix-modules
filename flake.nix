@@ -5,7 +5,10 @@
 
   outputs = { self, nixpkgs }: rec {
     nixosModules = {
-        swap-alt-and-meta = ./nixos/swap-alt-and-meta.nix;
+        sway = import ./nixos/sway.nix;
+        flatpak = import ./nixos/flatpak.nix;
+        swap-alt-and-meta = import ./nixos/swap-alt-and-meta.nix;
+        nix-index = import ./nixos/nix-index.nix;
     };
   };
 }
