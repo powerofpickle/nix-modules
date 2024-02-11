@@ -29,6 +29,7 @@
       wl-clipboard # Allows neovim to copy to clipboard
       gammastep
       dmenu # For dmenu_path command to pipe to fuzzel --dmenu
+      bemoji # Emoji picker
     ];
   };
 }
