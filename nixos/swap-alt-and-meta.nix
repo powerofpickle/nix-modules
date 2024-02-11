@@ -6,6 +6,7 @@
         # Swap Alt and Super keys
         leftalt = "leftmeta";
         leftmeta = "leftalt";
+        rightalt = "rightmeta";
       };
     };
   };
