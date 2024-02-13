@@ -7,7 +7,7 @@
     nixosModules = {
         sway = import ./nixos/sway.nix;
         flatpak = import ./nixos/flatpak.nix;
-        swap-alt-and-meta = import ./nixos/swap-alt-and-meta.nix;
+        remap-keys = import ./nixos/remap-keys.nix;
         nix-index = import ./nixos/nix-index.nix;
     };
   };
