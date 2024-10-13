@@ -1,5 +1,13 @@
-{ isHomeManager ? false, neovimNixpkgs ? null }:
-{ config, lib, pkgs, ... }:
+{
+  isHomeManager ? false,
+  neovimNixpkgs ? null,
+}:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   neovimNixpkgs' = if isNull neovimNixpkgs then pkgs else neovimNixpkgs;
   neovimPackages = with pkgs; [
@@ -11,6 +19,10 @@ let
     ripgrep
     gcc
   ];
-  packagesSetting = if isHomeManager then { home.packages = neovimPackages; } else { environment.systemPackages = neovimPackages; };
+  packagesSetting =
+    if isHomeManager then
+      { home.packages = neovimPackages; }
+    else
+      { environment.systemPackages = neovimPackages; };
 in
-  packagesSetting
+packagesSetting

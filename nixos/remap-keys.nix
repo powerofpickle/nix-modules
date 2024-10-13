@@ -7,7 +7,7 @@
         leftalt = "leftmeta";
         leftmeta = "leftalt";
         rightalt = "rightmeta";
-        rightcontrol = "rightalt";  # AltGr, for international keyboard
+        rightcontrol = "rightalt"; # AltGr, for international keyboard
 
         # Maps capslock to escape when pressed and control when held
         capslock = "overload(control, esc)";

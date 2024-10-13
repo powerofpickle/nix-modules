@@ -1,9 +1,9 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
 
-  fonts.packages = with pkgs;
-    [
-      font-awesome # For waybar
-    ];
+  fonts.packages = with pkgs; [
+    font-awesome # For waybar
+  ];
 
   programs.sway = {
     enable = true;
@@ -33,4 +33,3 @@
     ];
   };
 }
-
