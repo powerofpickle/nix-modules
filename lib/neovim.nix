@@ -1,6 +1,6 @@
 {
   isHomeManager ? false,
-  neovimNixpkgs ? null,
+  pkgs-unstable ? null,
 }:
 {
   config,
@@ -9,16 +9,26 @@
   ...
 }:
 let
-  neovimNixpkgs' = if isNull neovimNixpkgs then pkgs else neovimNixpkgs;
+  neovimNixpkgs = if isNull pkgs-unstable then pkgs else pkgs-unstable;
+  enableAvante = if isNull pkgs-unstable then false else true;
+  avantePackages = if enableAvante then [
+    pkgs.gnumake
+    /*
+    pkgs.cargo
+    pkgs-unstable.rustc
+    pkgs.openssl
+    pkgs.pkg-config
+    */
+  ] else [];
   neovimPackages = with pkgs; [
-    neovimNixpkgs'.neovim
+    neovimNixpkgs.neovim
     clang-tools
     ranger
     python3Packages.python-lsp-server
     lua-language-server
     ripgrep
     gcc
-  ];
+  ] ++ avantePackages;
   packagesSetting =
     if isHomeManager then
       { home.packages = neovimPackages; }
