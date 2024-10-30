@@ -10,29 +10,41 @@
 }:
 let
   neovimNixpkgs = if isNull pkgs-unstable then pkgs else pkgs-unstable;
-  enableAvante = if isNull pkgs-unstable then false else true;
-  avantePackages = if enableAvante then [
-    pkgs.gnumake
-    /*
-    pkgs.cargo
-    pkgs-unstable.rustc
-    pkgs.openssl
-    pkgs.pkg-config
-    */
-  ] else [];
-  neovimPackages = with pkgs; [
-    neovimNixpkgs.neovim
-    clang-tools
-    ranger
-    python3Packages.python-lsp-server
-    lua-language-server
-    ripgrep
-    gcc
-  ] ++ avantePackages;
-  packagesSetting =
+  enableAvante = !isNull pkgs-unstable;
+  avantePackages =
+    if enableAvante then
+      [
+        pkgs.gnumake
+        /*
+          pkgs.cargo
+          pkgs-unstable.rustc
+          pkgs.openssl
+          pkgs.pkg-config
+        */
+      ]
+    else
+      [ ];
+  neovimPackages =
+    with pkgs;
+    [
+      neovimNixpkgs.neovim
+      clang-tools
+      ranger
+      python3Packages.python-lsp-server
+      lua-language-server
+      ripgrep
+      gcc
+    ]
+    ++ avantePackages;
+  settings =
     if isHomeManager then
-      { home.packages = neovimPackages; }
+      {
+        home.packages = neovimPackages;
+        home.sessionVariables = {
+          EDITOR = "nvim";
+        };
+      }
     else
       { environment.systemPackages = neovimPackages; };
 in
-packagesSetting
+settings
