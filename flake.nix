@@ -81,7 +81,7 @@
 
         neovim = import ./lib/neovim.nix;
         forAllSystems = forAllSystems;
-      };
+      } // (import ./lib/misc.nix);
     in
     {
       nixosModules = nixosModules;
