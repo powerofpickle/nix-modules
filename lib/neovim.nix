@@ -34,6 +34,7 @@ let
       lua-language-server
       ripgrep
       gcc
+      haskellPackages.haskell-language-server
     ]
     ++ avantePackages;
   settings =

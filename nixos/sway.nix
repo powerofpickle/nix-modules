@@ -14,7 +14,7 @@
       fuzzel
       wayland
       waybar
-      gnome3.adwaita-icon-theme
+      adwaita-icon-theme
       playerctl # For MPRIS play-pause/next/previous
       alacritty
       jq # For focused-cwd script
