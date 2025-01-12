@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 {
 
+  environment.systemPackages = [ pkgs.nix-index ];
+
   programs.command-not-found.enable = false;
 
   programs.bash.interactiveShellInit = ''
