@@ -31,6 +31,7 @@
       dmenu # For dmenu_path command to pipe to fuzzel --dmenu
       bemoji # Emoji picker
       workstyle # Workspace icons based on applications
+      sway-overfocus # Separate shortcuts for navigating splits vs tabs/stacks
     ];
   };
 }
