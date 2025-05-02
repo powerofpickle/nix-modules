@@ -32,6 +32,7 @@
       bemoji # Emoji picker
       workstyle # Workspace icons based on applications
       sway-overfocus # Separate shortcuts for navigating splits vs tabs/stacks
+      banana-cursor
     ];
   };
 }
