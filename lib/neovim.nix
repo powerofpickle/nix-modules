@@ -35,6 +35,7 @@ let
       ripgrep
       gcc
       haskellPackages.haskell-language-server
+      nodejs  # For markdown-preview.nvim
     ]
     ++ avantePackages;
   settings =
