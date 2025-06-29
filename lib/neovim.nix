@@ -33,7 +33,7 @@ let
       lua-language-server
       ripgrep
       gcc
-      nodejs  # For markdown-preview.nvim
+      nodejs # For markdown-preview.nvim
 
       python3Packages.python-lsp-server
       haskellPackages.haskell-language-server
