@@ -30,12 +30,14 @@ let
       neovimNixpkgs.neovim
       clang-tools
       ranger
-      python3Packages.python-lsp-server
       lua-language-server
       ripgrep
       gcc
-      haskellPackages.haskell-language-server
       nodejs  # For markdown-preview.nvim
+
+      python3Packages.python-lsp-server
+      haskellPackages.haskell-language-server
+      rust_analyzer
     ]
     ++ avantePackages;
   settings =
