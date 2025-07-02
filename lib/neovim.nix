@@ -37,7 +37,7 @@ let
 
       python3Packages.python-lsp-server
       haskellPackages.haskell-language-server
-      rust_analyzer
+      rust-analyzer
     ]
     ++ avantePackages;
   settings =
