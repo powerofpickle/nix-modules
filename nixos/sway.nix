@@ -33,6 +33,7 @@
       workstyle # Workspace icons based on applications
       sway-overfocus # Separate shortcuts for navigating splits vs tabs/stacks
       banana-cursor
+      libnotify # For notify-send command to show notifications
     ];
   };
 }
