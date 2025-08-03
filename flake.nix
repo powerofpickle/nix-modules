@@ -69,10 +69,12 @@
                         }
                         // (builtins.mapAttrs (_: input: (import input { system = system; })) extraNixpkgs);
 
-                      nix.nixPath = [
-                        "nixpkgs=${nixpkgs.outPath}"
-                        "nixos=${nixpkgs.outPath}"
-                      ];
+                      /*
+                        nix.nixPath = [
+                          "nixpkgs=${nixpkgs.outPath}"
+                          "nixos=${nixpkgs.outPath}"
+                        ];
+                      */
                     }
                   )
                 ] ++ extraModules;
