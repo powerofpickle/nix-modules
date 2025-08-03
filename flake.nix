@@ -16,7 +16,8 @@
               install-flatpaks = ./scripts/install_flatpaks.sh;
             };
           in
-          builtins.mapAttrs (name: path: pkgs.writeScriptBin name (builtins.readFile path)) scripts
+          (builtins.mapAttrs (name: path: pkgs.writeScriptBin name (builtins.readFile path)) scripts)
+          // import ./packages/calc.nix pkgs
         )
       );
       nixosModules =
