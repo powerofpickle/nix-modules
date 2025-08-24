@@ -15,6 +15,6 @@ pkgs: {
   calc = pkgs.writeShellScriptBin "calc" ''
     exec ${
       pkgs."python3${pythonVersion}".withPackages getPythonPackages
-    }/bin/ipython -i ${./calc_imports.py} "$@"
+    }/bin/ipython --no-banner -i ${./calc_imports.py} "$@"
   '';
 }
