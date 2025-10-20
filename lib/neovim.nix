@@ -27,16 +27,15 @@ let
   neovimPackages =
     with pkgs;
     [
-      neovimNixpkgs.neovim
+      basedpyright
       clang-tools
-      ranger
-      lua-language-server
-      ripgrep
       gcc
-      nodejs # For markdown-preview.nvim
-
-      python3Packages.python-lsp-server
       haskellPackages.haskell-language-server
+      lua-language-server
+      neovimNixpkgs.neovim
+      nodejs # For markdown-preview.nvim
+      ranger
+      ripgrep
       rust-analyzer
     ]
     ++ avantePackages;

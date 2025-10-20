@@ -8,7 +8,7 @@
   programs.sway = {
     enable = true;
     extraPackages = with pkgs; [
-      sway
+      #sway
       swaylock
       swayidle
       fuzzel
