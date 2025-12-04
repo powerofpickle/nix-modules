@@ -77,14 +77,16 @@
                       */
                     }
                   )
-                ] ++ extraModules;
+                ]
+                ++ extraModules;
               };
           in
           builtins.mapAttrs (_: path: (mkConfig path)) entrypoints;
 
         neovim = import ./lib/neovim.nix;
         forAllSystems = forAllSystems;
-      } // (import ./lib/misc.nix);
+      }
+      // (import ./lib/misc.nix);
     in
     {
       nixosModules = nixosModules;
